@@ -53,6 +53,17 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Zyneria auth tokens (light) */
+    --auth-bg: 210 14% 95%;
+    --auth-accent: 211 100% 50%;
+    --auth-secondary: 270 60% 53%;
+    --auth-glass: 0 0% 0%;
+    --auth-glass-opacity: 0.05;
+    --auth-border: 0 0% 0%;
+    --auth-border-opacity: 0.1;
+    --auth-text: 222 30% 12%;
+    --auth-muted: 220 9% 40%;
   }
 
   .dark {
