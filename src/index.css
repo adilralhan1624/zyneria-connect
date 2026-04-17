@@ -53,6 +53,17 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Zyneria auth tokens (light) */
+    --auth-bg: 210 14% 95%;
+    --auth-accent: 211 100% 50%;
+    --auth-secondary: 270 60% 53%;
+    --auth-glass: 0 0% 0%;
+    --auth-glass-opacity: 0.05;
+    --auth-border: 0 0% 0%;
+    --auth-border-opacity: 0.1;
+    --auth-text: 222 30% 12%;
+    --auth-muted: 220 9% 40%;
   }
 
   .dark {
@@ -91,6 +102,17 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Zyneria auth tokens (dark) */
+    --auth-bg: 222 17% 6%;
+    --auth-accent: 187 100% 50%;
+    --auth-secondary: 271 76% 53%;
+    --auth-glass: 0 0% 100%;
+    --auth-glass-opacity: 0.05;
+    --auth-border: 0 0% 100%;
+    --auth-border-opacity: 0.1;
+    --auth-text: 210 40% 98%;
+    --auth-muted: 215 16% 65%;
   }
 }
 
@@ -102,4 +124,37 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer utilities {
+  .auth-glass {
+    background-color: hsl(var(--auth-glass) / var(--auth-glass-opacity));
+    border: 1px solid hsl(var(--auth-border) / var(--auth-border-opacity));
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+  }
+  .auth-input {
+    background-color: hsl(var(--auth-glass) / var(--auth-glass-opacity));
+    border: 1px solid hsl(var(--auth-border) / var(--auth-border-opacity));
+    color: hsl(var(--auth-text));
+  }
+  .auth-input::placeholder {
+    color: hsl(var(--auth-muted));
+  }
+  .auth-input:focus {
+    outline: none;
+    border-color: hsl(var(--auth-accent) / 0.6);
+    box-shadow: 0 0 0 3px hsl(var(--auth-accent) / 0.18);
+  }
+  .auth-glow-btn {
+    background: linear-gradient(135deg, hsl(var(--auth-accent)), hsl(var(--auth-secondary)));
+    color: white;
+    box-shadow: 0 8px 30px hsl(var(--auth-accent) / 0.35), 0 0 18px hsl(var(--auth-accent) / 0.35);
+    transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.2s ease;
+  }
+  .auth-glow-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 40px hsl(var(--auth-accent) / 0.55), 0 0 28px hsl(var(--auth-secondary) / 0.45);
+  }
+  .auth-glow-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 }
