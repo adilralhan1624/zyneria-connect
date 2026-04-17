@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { Loader2, Sparkles } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 type Mode = "login" | "signup";
 
@@ -62,6 +63,9 @@ export const AuthOverlay = () => {
       </div>
 
       <div className="auth-glass relative w-full max-w-md rounded-2xl p-7 sm:p-8 shadow-2xl animate-fade-in">
+        <div className="absolute right-4 top-4">
+          <ThemeToggle />
+        </div>
         <header className="mb-6 text-center">
           <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl auth-glow-btn animate-glow-pulse">
             <Sparkles className="h-6 w-6" />
