@@ -25,3 +25,9 @@ Tech stack:-
 Notes/Status:-
 
 Given the hackathon's time constraints, this submission focuses on the authentication and onboarding layer — the "front door" of the product. Login and sign-up are currently simulated on the client side (no backend or real credential verification yet). The main dashboard/productivity features beyond login are planned but not yet built.
+
+Possible next steps:-
+
+1. Connect to a real backend/auth provider (e.g. Supabase, Firebase Auth)
+2. Build the productivity dashboard for task automation, routine tracking, smart reminders
+2. Add persistent sessions
